@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "~0.16.2",
     "axios-cancel": "^0.2.2",
+    "react-maskedinput": "^4.0.1",
     "classnames": "^2.2.5",
     "dot-prop-immutable": "^1.4.0",
     "emoji-mart": "^2.8.1",

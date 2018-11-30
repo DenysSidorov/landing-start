@@ -20,7 +20,7 @@ var config = {
     main: ['webpack-dev-server/client'], // for dev mode
     app: ['babel-polyfill', './app'], // entry point
     common_css: [
-      './styles/main',
+      './styles/main.less',
       './styles/reset',
       './styles/helpers/font-awesome.less',
     ], // global styles sets
@@ -58,7 +58,7 @@ var config = {
     rules: [
       // base64 - images in js/css like base64
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|JPG)$/,
         include: path.resolve(__dirname, 'src'),
         use: [
           {
@@ -149,6 +149,13 @@ var config = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'www/template.html'),
       filename: '../index.html',
+      minify: false,
+      alwaysWriteToDisk: true,
+      excludeAssets: [/main.bundle.*.js/, /common_css.bundle.*.js/],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'www/template2.html'),
+      filename: '../index2.html',
       minify: false,
       alwaysWriteToDisk: true,
       excludeAssets: [/main.bundle.*.js/, /common_css.bundle.*.js/],
