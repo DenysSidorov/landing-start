@@ -56,8 +56,10 @@ class OneClickModal extends Component {
     };
 
     console.log('******', order);
+    console.log(urlApi, ' urlApi');
     try {
-      let response = await axios.post(`${urlApi}/api/orders`, order);
+      // let response = await axios.post(`${urlApi}/api/orders`, order);
+      let response = await axios.post(`http://localhost:3001/api/orders`, order);
       if (response) {
         if(this.props.willDeleteGoods){
           this.props.deleteAll();
@@ -70,6 +72,7 @@ class OneClickModal extends Component {
       // setTimeout(()=>{this.setState({cards: cards.goods})}, 2000)
     } catch (e) {
       console.log(e);
+      throw e;
       alert('Ошибка, позвоните нам по номеру указанном в контактах!');
     } finally {
     }
