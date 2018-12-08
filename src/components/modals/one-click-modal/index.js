@@ -5,7 +5,7 @@ import MaskedInput from 'react-maskedinput'
 // import {connect} from "react-redux";
 // import {bindActionCreators} from "redux";
 import axios from "axios";
-// import urlApi from '../../../../../api/urlApi';
+import urlApi from '../../../api/urlApi';
 import BasicModalWindowPB from "../basic-modal-pb/index";
 import UploadFileField from "../../upload-file-field/index";
 // import OneGoodItemInList from "./OneGoodInList/index";
@@ -48,35 +48,12 @@ class OneClickModal extends Component {
   }
 
   sendOneClick = async () => {
-    // this.setState({isSend: true})
-    // this.fireClose();
-
-    let allGoods = this.props.goods.map((g) => {
-      return {...g, count: g.count ? g.count : 1}
-    })
-    let price = allGoods.reduce((prev, cur) => prev + Math.floor((((cur.price / 100) * (100 - cur.sail)) * cur.count)), 0);
     let order = {
-      price,
-      payment: this.state.payment,
-      delivery: this.state.delivery,
       name: this.state.name,
-      address: this.state.address,
-      email: this.state.email,
       phone: this.state.phone,
-      goods: []
-
+      // price,
+      // email: this.state.email,
     };
-    allGoods.forEach((item, ind) => {
-      var curGood = {};
-      curGood._id = item._id;
-      curGood.count = item.count;
-      curGood.name = item.name;
-      curGood.model = item.model;
-      curGood.sail = item.sail;
-      curGood.price = item.price;
-
-      order.goods.push(curGood);
-    });
 
     console.log('******', order);
     try {

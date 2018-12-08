@@ -1,7 +1,7 @@
 // If exists launch argument  '-p';
 var productionArg = process.argv.indexOf('-p') != -1 ? true : false;
 var inProduction = productionArg ? 'production' : 'development';
-
+const configApp = require('./config/index');
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -134,6 +134,8 @@ var config = {
         // This has effect on the react lib size
         // process.env.NODE_ENV in JavaScript
         NODE_ENV: JSON.stringify(inProduction),
+        'process.env.APP_PORT': JSON.stringify(inProduction == 'development' ? configApp.frontend.apiPort : '')
+
       },
     }),
     new ExtractTextPlugin({

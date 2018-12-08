@@ -9,7 +9,7 @@ var http = require('http');
 
 // import assets from "./app-server/assets.json";
 import config from "./config/index";
-import orderRoute from "./app-server/shop/routes/orderRoute";
+import orderRoute from "./app-server/routes/orderRoute";
 import errorMiddleWare from "./app-server/middlewares/errors";
 
 
