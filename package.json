@@ -149,6 +149,8 @@
     "lint-fix": "node_modules/.bin/eslint --fix src/**/*.js",
     "start-server": "set NODE_ENV=development&&set SITE=https://google.com&&set MONGODB_URI=mongodb://localhost:27017/shop&&set PORT=3001&&nodemon --exec babel-node server.js",
     "server-prod": "babel-node server.js --presets es2015",
-    "start": "babel-node server.js --presets es2015 && node_modules/.bin/webpack -p"
+
+    "postinstall": "node_modules/.bin/webpack -p",
+    "start": "babel-node server.js --presets es2015"
   }
 }
