@@ -125,7 +125,7 @@ var config = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['./www/assets/*.*']), // clean folder before  every bundling
+    // new CleanWebpackPlugin(['./www/assets/*.*']), // clean folder before  every bundling
     // new CleanWebpackPlugin(['./www/index.html']), // clean file before every bundling
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
