@@ -136,7 +136,6 @@ var config = {
         NODE_ENV: JSON.stringify(inProduction),
         'process.env.NODE_ENV': JSON.stringify(inProduction),
         APP_PORT: JSON.stringify(inProduction == 'development' ? configApp.frontend.apiPort : '')
-
       },
     }),
     new ExtractTextPlugin({
