@@ -126,7 +126,7 @@ var config = {
   },
   plugins: [
     new CleanWebpackPlugin(['./www/assets/*.*']), // clean folder before  every bundling
-    new CleanWebpackPlugin(['./www/rd2hash/index.html']), // clean file before every bundling
+    new CleanWebpackPlugin(['./www/index.html']), // clean file before every bundling
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
@@ -145,7 +145,7 @@ var config = {
     }),
     new AssetsPlugin({
       filename: 'assets.json',
-      path: __dirname + '/www/assets', // где его хранить
+      path: __dirname + '/app-server', // где его хранить
 
     }),
     new HtmlWebpackPlugin({
