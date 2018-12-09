@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "ho-ho",
   "main": "webpack.config.js",
-  "engines": {
-    "node": "~7.0.0"
-  },
   "repository": {
     "type": "git",
     "url": ""
