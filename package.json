@@ -66,12 +66,7 @@
     "css-loader": "~0.28.1",
     "cssnext": "~1.8.4",
     "eslint": "^4.9.0",
-    "eslint-config-airbnb": "~16.1.0",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "~2.7.0",
-    "eslint-plugin-jsx-a11y": "~6.0.2",
-    "eslint-plugin-prettier": "~2.3.1",
-    "eslint-plugin-react": "^7.4.0",
+
     "extract-text-webpack-plugin": "~2.1.2",
     "file-loader": "~0.11.1",
     "html-loader": "^0.4.4",
@@ -91,7 +86,7 @@
     "style-loader": "~0.17.0",
     "url-loader": "~0.5.8",
     "webpack": "~2.2.0",
-    "webpack-dev-server": "^2.6.1",
+
 
 
 
@@ -104,9 +99,7 @@
     "cors": "~2.8.4",
     "cssnano": "~3.10.0",
     "ejs": "^2.5.7",
-    "eslint-config-airbnb-base": "~11.3.1",
-    "eslint-config-prettier": "~2.3.0",
-    "eslint-find-rules": "~3.1.1",
+
     "expect": "~1.20.2",
     "express": "~4.14.0",
     "express-session": "~1.14.1",
@@ -117,7 +110,7 @@
     "mongoose": "~4.10.8",
     "morgan": "~1.7.0",
     "nodemailer": "~4.1.0",
-    "nodemon": "~1.11.0",
+
     "password-hash": "~1.2.2",
     "postcss-mixins": "~6.0.0",
     "precss": "~1.4.0",
@@ -135,6 +128,19 @@
     "rimraf": "~2.6.1",
     "supertest": "~2.0.0",
     "token-generator": "~1.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.6.1",
+    "nodemon": "~1.11.0",
+    "eslint-config-airbnb-base": "~11.3.1",
+    "eslint-config-prettier": "~2.3.0",
+    "eslint-find-rules": "~3.1.1",
+    "eslint-config-airbnb": "~16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "~2.7.0",
+    "eslint-plugin-jsx-a11y": "~6.0.2",
+    "eslint-plugin-prettier": "~2.3.1",
+    "eslint-plugin-react": "^7.4.0"
   },
   "scripts": {
     "webpack-prod": "node_modules/.bin/webpack -p",
