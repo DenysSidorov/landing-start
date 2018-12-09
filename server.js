@@ -39,6 +39,7 @@ console.log(process.env.PORT, 'port');
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '/www/')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('tiny')); // Настройка логирования, см. документация на npmjs.com
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({extended: true}));
