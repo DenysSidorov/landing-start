@@ -18,9 +18,10 @@ class OneClickModal extends Component {
     randomNumber: 1,
     isSend: false,
     phone: '',
-    name:'',
+    name: '',
     files: [],
-    imageSrc: ''
+    imageSrc: '',
+    phoneErr: false
   }
 
   selectedFile = (files, imageSrc) => {
@@ -44,7 +45,7 @@ class OneClickModal extends Component {
   }
 
   _onChange = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value, phoneErr: false})
   }
 
   sendOneClick = async () => {
@@ -57,26 +58,25 @@ class OneClickModal extends Component {
 
     console.log('******', order);
     console.log(urlApi, ' urlApi');
-    try {
-      // let response = await axios.post(`${urlApi}/api/orders`, order);
-      let response = await axios.post(`http://localhost:3001/api/orders`, order);
-      if (response) {
-        if(this.props.willDeleteGoods){
-          this.props.deleteAll();
+    if(order.phone.length && !order.phone.includes('_')){
+      try {
+        // todo url!!
+        // let response = await axios.post(`${urlApi}/api/orders`, order);
+        let response = await axios.post(`http://localhost:3001/api/orders`, order);
+        if (response) {
+          response = response.data;
+          console.log(response, 'response1');
+          this.setState({isSend: true})
         }
-        response = response.data
-        console.log(response, 'response1'); // _id
-        this.setState({isSend: true})
+      } catch (e) {
+        console.log(e);
+        throw e;
+        alert('Ошибка, позвоните нам по номеру указанном в контактах!');
+      } finally {
       }
-
-      // setTimeout(()=>{this.setState({cards: cards.goods})}, 2000)
-    } catch (e) {
-      console.log(e);
-      throw e;
-      alert('Ошибка, позвоните нам по номеру указанном в контактах!');
-    } finally {
+    } else {
+      this.setState({phoneErr: true})
     }
-
   }
 
   render() {
@@ -107,7 +107,9 @@ class OneClickModal extends Component {
                 className="oneClickModal_inputPhone"
               />
             </div>
-
+            {this.state.phoneErr ? <div className="oneClickModal_userError">
+                Укажите приавильный номер телефона!
+            </div> : null}
             <div className="oneClickModal_userDate">
               <div className="oneClickModal_phone">
                 Имя
@@ -133,34 +135,31 @@ class OneClickModal extends Component {
             </Fragment> : null}
 
 
-
-
-
             {/*<div className="oneClickModal_gList">*/}
-              {/*{this.props.goods.map((good, ind) => {*/}
-                {/*return (*/}
-                  {/*<div className="oneClickModal_gList_item" key={ind}>*/}
-                    {/*<div className="oneClickModal_gList_item_logo">*/}
-                      {/*<img src={'/img-static/' + good.photo[0]}/>*/}
-                    {/*</div>*/}
-                    {/*<div className="oneClickModal_gList_item_name">*/}
-                      {/*{good.name && good.name} {good.model && good.model} -*/}
-                    {/*</div>*/}
+            {/*{this.props.goods.map((good, ind) => {*/}
+            {/*return (*/}
+            {/*<div className="oneClickModal_gList_item" key={ind}>*/}
+            {/*<div className="oneClickModal_gList_item_logo">*/}
+            {/*<img src={'/img-static/' + good.photo[0]}/>*/}
+            {/*</div>*/}
+            {/*<div className="oneClickModal_gList_item_name">*/}
+            {/*{good.name && good.name} {good.model && good.model} -*/}
+            {/*</div>*/}
 
-                    {/*<div className="oneClickModal_gList_item_price">*/}
-                      {/*{good.price}$ -*/}
-                    {/*</div>*/}
+            {/*<div className="oneClickModal_gList_item_price">*/}
+            {/*{good.price}$ -*/}
+            {/*</div>*/}
 
-                    {/*<div className="oneClickModal_gList_item_count">*/}
-                      {/*{good.count ? good.count : 1} {' шт.'} -*/}
-                    {/*</div>*/}
+            {/*<div className="oneClickModal_gList_item_count">*/}
+            {/*{good.count ? good.count : 1} {' шт.'} -*/}
+            {/*</div>*/}
 
-                    {/*<div className="oneClickModal_gList_item_code">*/}
-                      {/*{' код-'}{good.code}*/}
-                    {/*</div>*/}
-                  {/*</div>*/}
-                {/*)*/}
-              {/*})}*/}
+            {/*<div className="oneClickModal_gList_item_code">*/}
+            {/*{' код-'}{good.code}*/}
+            {/*</div>*/}
+            {/*</div>*/}
+            {/*)*/}
+            {/*})}*/}
 
             {/*</div>*/}
 
