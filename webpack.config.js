@@ -134,7 +134,8 @@ var config = {
         // This has effect on the react lib size
         // process.env.NODE_ENV in JavaScript
         NODE_ENV: JSON.stringify(inProduction),
-        'process.env.APP_PORT': JSON.stringify(inProduction == 'development' ? configApp.frontend.apiPort : '')
+        'process.env.NODE_ENV': JSON.stringify(inProduction),
+        APP_PORT: JSON.stringify(inProduction == 'development' ? configApp.frontend.apiPort : '')
 
       },
     }),

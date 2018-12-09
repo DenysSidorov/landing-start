@@ -40,6 +40,5 @@ if (containerBuyBtn5) {
 
 if (containerBuyBtn6) {
   ReactDOM.render(<BuyBtn /*showFileUpload={true}*/ text={'Бесплатная визуализация'}/>, containerBuyBtn6);
-}
-console.log(2);
+
 

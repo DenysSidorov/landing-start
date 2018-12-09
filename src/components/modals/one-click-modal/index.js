@@ -25,8 +25,8 @@ class OneClickModal extends Component {
   }
 
   selectedFile = (files, imageSrc) => {
-    console.log(files, 'parent files');
-    console.log(imageSrc, 'parent imageSrc');
+    // console.log(files, 'parent files');
+    // console.log(imageSrc, 'parent imageSrc');
     this.setState({files, imageSrc});
   }
 
@@ -52,20 +52,13 @@ class OneClickModal extends Component {
     let order = {
       name: this.state.name,
       phone: this.state.phone,
-      // price,
-      // email: this.state.email,
     };
-
-    console.log('******', order);
-    console.log(urlApi, ' urlApi');
     if(order.phone.length && !order.phone.includes('_')){
       try {
-        // todo url!!
-        // let response = await axios.post(`${urlApi}/api/orders`, order);
-        let response = await axios.post(`http://localhost:3001/api/orders`, order);
+        let response = await axios.post(`${urlApi}/api/orders`, order);
         if (response) {
           response = response.data;
-          console.log(response, 'response1');
+          // console.log(response, 'response1');
           this.setState({isSend: true})
         }
       } catch (e) {
@@ -108,7 +101,7 @@ class OneClickModal extends Component {
               />
             </div>
             {this.state.phoneErr ? <div className="oneClickModal_userError">
-                Укажите приавильный номер телефона!
+                Укажите правильный номер телефона!
             </div> : null}
             <div className="oneClickModal_userDate">
               <div className="oneClickModal_phone">
@@ -120,8 +113,8 @@ class OneClickModal extends Component {
               />
             </div>
 
-            <div className="oneClickModal_sendBtn">
-              <span onClick={this.sendOneClick}>Отправить</span>
+            <div className="oneClickModal_sendBtn" onClick={this.sendOneClick}>
+              <span >Отправить</span>
             </div>
 
             {this.props.showFileUpload ? <Fragment>

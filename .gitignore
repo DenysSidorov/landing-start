@@ -2,6 +2,7 @@
 dist/bundle.jsapp-server/jsonassets.
 www/assert/*
 www/index.html
+www/index2.html
 www/assets/assets.json
 
 

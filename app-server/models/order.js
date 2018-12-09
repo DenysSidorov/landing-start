@@ -7,6 +7,7 @@ const OrderSchema = new Schema({
     delivery: {type: String, require: true, default: '-'},
     name: {type: String, require: true, default: '-'},
     address: {type: String, require: true, default: '-'},
+    site: {type: String, require: true, default: '-'},
     phone: {type: String, require: true},
     email: {type: String},
     createdAt: { type: Date, require: true, default: Date.now },

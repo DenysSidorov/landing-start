@@ -3,8 +3,8 @@ import { sendMailWithOrder } from '../services/sendMailWithOrder';
 
 export async function create(req, resp, next) {
     var order = req.body;
-    order.name = 'doshki.com';
-    console.log(order, ' - Order');
+    order.site = 'doshki.com';
+    // console.log(order, ' - Order');
     try {
         var order = await Order.create(order);
         console.log(order, 'Order');
