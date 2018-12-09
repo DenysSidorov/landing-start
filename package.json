@@ -101,12 +101,11 @@
     "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
-    "start": "node_modules/.bin/webpack -p",
     "webpack-prod": "node_modules/.bin/webpack -p",
     "webpack-dev": "node_modules/.bin/webpack-dev-server --hot --inline",
     "lint": "node_modules/.bin/eslint  --quiet src/**/*.js",
     "lint-fix": "node_modules/.bin/eslint --fix src/**/*.js",
-    "start-server": "set NODE_ENV=development&&set SITE=https://google.com&&set MONGODB_URI=mongodb://localhost:27017/shop&&set PORT=3001&&nodemon --exec babel-node server.js"
-
+    "start-server": "set NODE_ENV=development&&set SITE=https://google.com&&set MONGODB_URI=mongodb://localhost:27017/shop&&set PORT=3001&&nodemon --exec babel-node server.js",
+    "start": "babel-node server.js --presets es2015"
   }
 }
