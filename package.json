@@ -101,11 +101,10 @@
     "token-generator": "~1.0.0",
     "url-loader": "~0.5.8",
     "webpack": "~2.2.0",
-    "webpack-dev-server": "~2.2.0-rc.0"
+    "webpack-dev-server": "~2.2.0-rc.0",
+    "@babel/cli": "^7.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "babel-cli": "^6.24.1"
   },
   "scripts": {
     "webpack-prod": "node_modules/.bin/webpack -p",
