@@ -134,7 +134,7 @@
     "redux-devtools": "~3.4.0",
     "rimraf": "~2.6.1",
     "supertest": "~2.0.0",
-    "token-generator": "~1.0.0",
+    "token-generator": "~1.0.0"
   },
   "scripts": {
     "webpack-prod": "node_modules/.bin/webpack -p",
