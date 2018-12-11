@@ -21,7 +21,7 @@ $robotoLight: 'Roboto-Light';
     margin-left: 16px;
     margin-top: 3px;
   }
-  .oneClickModal_userError{
+  .oneClickModal_userError {
     font-family: "Helvetica Neue", Helvetica;
     font-size: 15px;
     font-weight: bold;
@@ -37,7 +37,7 @@ $robotoLight: 'Roboto-Light';
     font-size: 25px;
     align-items: center;
     .oneClickModal_phone {
-      .redColor{
+      .redColor {
         color: #d32f00;
         font-size: 18px;
       }
@@ -72,7 +72,7 @@ $robotoLight: 'Roboto-Light';
       //}
     }
   }
-  .oneClickModal_titleName{
+  .oneClickModal_titleName {
     color: #2C3642;
     min-width: 60px;
     font-family: "Helvetica Neue", Helvetica;
@@ -81,7 +81,7 @@ $robotoLight: 'Roboto-Light';
     line-height: 16px;
     margin: 20px 20px 0px 20px;
   }
-  .oneClickModal_file{
+  .oneClickModal_file {
 
   }
   .oneClickModal_sendBtn {
@@ -91,6 +91,7 @@ $robotoLight: 'Roboto-Light';
     border-radius: 7px;
     margin-bottom: 20px;
     width: 30%;
+    min-width: 135px;
     cursor: pointer;
     height: 40px;
     display: -webkit-box;
@@ -167,5 +168,10 @@ $robotoLight: 'Roboto-Light';
     margin-top: 8px;
     margin-bottom: 14px;
   }
+}
 
+@media screen and (max-width: 1024px) {
+  .oneClickModal_userDate {
+    flex-wrap: wrap;
+  }
 }
