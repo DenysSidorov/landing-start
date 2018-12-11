@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainWrapper from './components/main-wrapper';
+import MobileMenu from './native-js/mobile-menu';
 import BuyBtn from './components/buy-btn';
 console.log("Hello landing!2");
 

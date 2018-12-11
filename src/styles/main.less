@@ -152,7 +152,7 @@ h1 {
   min-height: 70px;
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 35px;
   justify-content: space-between;
   .header_logo {
     width: 150px;
@@ -160,6 +160,7 @@ h1 {
   .header_items {
     display: flex;
     .header_item {
+      flex-shrink: 0;
       margin-left: 20px;
       transition: all ease 0.3s;
       &:hover {
@@ -176,9 +177,13 @@ h1 {
   }
   .header_number {
     font-family: 'Roboto-Medium';
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #f29509;
     font-weight: bold;
+  }
+  .header_mobMenu{
+    display: none;
+
   }
 }
 
@@ -291,7 +296,7 @@ h1 {
       color: #2f2f2f;
       margin-bottom: 5px;
     }
-    .price_title_discount{
+    .price_title_discount {
       margin-bottom: 40px;
       font-weight: bold;
       font-family: 'Roboto-Medium';
@@ -312,7 +317,7 @@ h1 {
           font-weight: bold;
         }
         .price_prices_squ_text {
-          .price_prices_squ_text_size{
+          .price_prices_squ_text_size {
             color: #de590b;
           }
           font-family: 'Roboto-Medium';
@@ -684,7 +689,7 @@ h1 {
     .socBlock_inst {
       background-color: #f8c639;
       position: relative;
-      .buyNow2_arrow{
+      .buyNow2_arrow {
         position: absolute;
         top: -30px;
         animation: animate-row 2s infinite;
@@ -833,7 +838,7 @@ h1 {
           padding: 0 20px;
           border: 1px solid transparent;
           transition: all .4s ease;
-          .buyNow2_arrow{
+          .buyNow2_arrow {
             position: absolute;
             top: -30px;
             animation: animate-row 2s infinite;
@@ -1086,7 +1091,8 @@ h1 {
     }
   }
 }
-.buyNowContBodyTextContent2_cont{
+
+.buyNowContBodyTextContent2_cont {
   z-index: 1;
   margin-top: 30px;
   display: flex;
@@ -1118,7 +1124,7 @@ h1 {
         transform: translateX(0px);
       }
     }
-    .buyNow2_arrow{
+    .buyNow2_arrow {
       position: absolute;
       top: -30px;
       animation: animate-row 2s infinite;
@@ -1147,6 +1153,7 @@ h1 {
     }
   }
 }
+
 .callUs {
   width: 100%;
   flex-wrap: wrap;
@@ -1390,5 +1397,64 @@ h1 {
   }
   to {
     opacity: 1
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 20px;
+    .header_logo {
+      width: 120px;
+    }
+    .header_items {
+      .header_item {
+        span {
+          font-size: 1.7rem;
+        }
+      }
+    }
+    .header_number {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    .header_logo{
+      width: 95px;
+    }
+    .header_items {
+      transform: translateX(-5000px);
+      transition: all ease 0.15s;
+      position: fixed;
+      top: 0;
+      /* left: 0; */
+      right: 0;
+      bottom: 0;
+      width: 80%;
+      height: 100%;
+      display: flex;
+      background-color: orange;
+      /* justify-content: center; */
+      align-items: center;
+      flex-wrap: wrap;
+      .header_item{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        span {
+          font-size: 2.4rem;
+        }
+      }
+    }
+    .header_mobMenu{
+      display: block;
+      z-index: 99999;
+      img{
+        cursor: pointer;
+        width: 30px;
+      }
+    }
   }
 }
