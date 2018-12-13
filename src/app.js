@@ -3,14 +3,6 @@ import ReactDOM from 'react-dom';
 import MainWrapper from './components/main-wrapper';
 import MobileMenu from './native-js/mobile-menu';
 import BuyBtn from './components/buy-btn';
-console.log("Hello landing!2");
-
-// const container = undefined /*document.getElementById('main')*/;
-//
-// if (container) {
-//   ReactDOM.render(<MainWrapper/>, container);
-// }
-
 
 const containerBuyBtn1 = document.getElementById('buyNow1');
 const containerBuyBtn2 = document.getElementById('buyNow2');
