@@ -32,7 +32,7 @@ export const sendMailWithOrder = ({email = [], order}) => {
         </div>`;
   // console.log('-----', html);
   let mailOptions = {
-    from: 'doshki.com', // sender address
+    from: "doshki.com <Магазин-фабрика>", // sender address
     // to: "000scorpions0000@gmail.com, 1qazxsw23edccde3@gmail.com", // list of receivers
     to: email.join(', '),
     // subject: `Заказ товара на Doshki.com id - ${order._id}`,
