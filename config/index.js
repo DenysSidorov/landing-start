@@ -1,7 +1,7 @@
 var configApp = {
   frontend: {
     port: 8001,
-    domain: 'localhost',
+    domain: '127.0.0.1',
     apiPort: 3001 // 3009
   },
   backend: {
