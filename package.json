@@ -85,7 +85,7 @@
     "style-loader": "~0.17.0",
     "url-loader": "~0.5.8",
     "webpack": "~2.2.0",
-    "bcrypt": "~1.0.2",
+    "bcrypt": "~5.0.0",
     "bluebird": "~3.5.0",
     "body-parser": "~1.15.2",
     "cors": "~2.8.4",
